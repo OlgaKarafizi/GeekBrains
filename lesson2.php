@@ -182,4 +182,43 @@ echo "- число 0 в степени 5: " . power(0,5), "<br>";
 echo "- число 2 в степени 0: " . power(2,0), "<br>";
 echo "- число 0 в степени -5: " . power(0,-5), "<br>";
 echo "- число 0 в степени 0: " . power(0,0), "<br>";
+
+// ЗАДАНИЕ 7
+echo "<h1> Задание 7 </h1>", "<br>";
+
+function hour() {
+    //определяю ЧАС/ЧАСА/ЧАСОВ
+    if (date("G") == 1 || date("G") == 21) {
+        $hour = "час";
+        return $hour;
+    }
+    elseif (date("G") == 2 || date("G") == 3 || date("G") == 4 || date("G") == 22 || date("G") == 23) {
+        $hour = "часa";
+        return $hour;
+    }
+    else $hour = "часов";
+    return $hour;
+}
+
+function minut () {
+    //определяю МИНУТ/МИУТА/МИНУТЫ
+    if (date("i") == 1 || date("i") == 21 || date("i") == 31 || date("i") == 41 || date("i") == 51) {
+        $minut = "минута";
+        return $minut;
+    }
+    elseif ((date("i") >= 2 && date("i") <= 4) || (date("i") >= 22 && date("i") <= 24) ||
+        (date("i") >= 32 && date("i") <= 34) || (date("i") >= 42 && date("i") <= 44) ||
+        (date("i") >= 52 && date("i") <= 54)) {
+        $minut = "минуты";
+        return $minut;
+    }
+    else $minut = "минут";
+    return $minut;
+}
+
+function mytime () {
+    return date("G") . ' ' . hour() . ' ' . date("i") . ' ' . minut();
+}
+
+echo mytime();
 ?>
