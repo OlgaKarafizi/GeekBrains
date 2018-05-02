@@ -27,8 +27,11 @@ CONST IMG_SMALL = './img_small/';
 
 $path_norm = IMG_NORM . $_FILES['load_file']['name'];
 $path_small = IMG_SMALL . $_FILES['load_file']['name'];
+$size = $_FILES['load_file']['size'];
+$name = $_FILES['load_file']['name'];
 
-$inquiry = "INSERT INTO `image` (`path_norm`, `path_small`) VALUES ('" . $path_norm . "', '" . $path_small . "')";
+$inquiry = "INSERT INTO `image` (`path_norm`, `path_small`, `size`, `name`) 
+VALUES ('" . $path_norm . "', '" . $path_small . "', '" . $size . "', '" . $name . "')";
 //echo $path_small;
 //echo $path_norm;
 //echo $inquiry;

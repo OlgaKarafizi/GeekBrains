@@ -41,7 +41,7 @@ $conclusion = mysqli_query($connect,$sql);
 while($data=mysqli_fetch_assoc($conclusion)): ?>
     <a href="img.php?img=<?= $data['path_norm'] ?>" style="text-decoration: none;"> <img src="<?= $data['path_small'] ?>"> </a>
 <?php endwhile;
-$data['path_small']
+header('Location: page.php');
 ?>
 
 </body>
