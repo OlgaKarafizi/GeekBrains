@@ -8,8 +8,8 @@
 
 $server = "localhost";
 $login="root";
-$pass="";
-$db = "lesson5";
+$pass="1";
+$db = "GBlesson5";
 
 
 //коннектимся к серверу базы данных и выбираем базу данных для работы

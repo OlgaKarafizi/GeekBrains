@@ -5,6 +5,7 @@
  * Date: 26.04.2018
  * Time: 11:21
  */
+require "config.php";
 include_once 'loading.php';
 //echo '<pre>';
 //print_r($_GET);
@@ -18,7 +19,12 @@ include_once 'loading.php';
 <body>
 <a href="index.php"> Вернуться </a>
 <div>
-    <img src="<?=IMG_NORM.$_GET['img'] ?>">
+    <?php
+    $sql = "select * from image";
+    $conclusion = mysqli_query($connect,$sql);
+    $data=mysqli_fetch_assoc($conclusion);?>
+
+    <img src="<?=$_GET['img'] ?>">
 </div>
 </body>
 </html>

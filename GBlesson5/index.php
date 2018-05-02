@@ -6,8 +6,8 @@
  * Time: 11:14
  */
 
-  include_once 'loading.php';
-  require "config.php";
+require "config.php";
+include_once 'loading.php';
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +33,16 @@
   </div>
 
 <?php
-$sql = "select * from shop";
-echo $sql;
+//echo $sql;
 
-$res = mysqli_query($connect,$sql);
-while($data=mysqli_fetch_assoc($res)){
-echo "Автомобиль ".$data['name']." стоит ".$data['price']."<br>";
-}
+$sql = "select * from image;";
+$conclusion = mysqli_query($connect,$sql);
+
+while($data=mysqli_fetch_assoc($conclusion)): ?>
+    <a href="img.php?img=<?= $data['path_norm'] ?>" style="text-decoration: none;"> <img src="<?= $data['path_small'] ?>"> </a>
+<?php endwhile;
+$data['path_small']
 ?>
+
 </body>
 </html>
